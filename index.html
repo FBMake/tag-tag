@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>tag-tag</title>
+  <link rel="stylesheet" href="style.css">
+  <style id="page-style"></style>
+</head>
+<body>
+  <header class="no-print">
+    <h1>tag-tag</h1>
+    <p>Impression test : une étiquette fixe sur ruban 18 mm.</p>
+  </header>
+
+  <main class="no-print">
+    <section class="controls">
+      <label>Texte
+        <input id="text" type="text" value="tag-tag ✓ 18 mm">
+      </label>
+      <label>Longueur de l'étiquette (mm)
+        <input id="length" type="number" min="20" max="300" step="1" value="60">
+      </label>
+      <label>Marge verticale (mm)
+        <input id="vmargin" type="number" min="0" max="6" step="0.5" value="1.5">
+      </label>
+      <label class="check">
+        <input id="frame" type="checkbox" checked> Cadre de calibrage
+      </label>
+      <button id="print" type="button">Imprimer</button>
+    </section>
+
+    <section class="preview-wrap">
+      <h2>Aperçu (échelle ×<span id="scale">4</span>)</h2>
+      <div id="preview" class="preview"></div>
+    </section>
+
+    <section class="help">
+      <h2>Réglages Windows pour la P-touch D610BT</h2>
+      <ol>
+        <li>Installe le pilote Brother « P-touch D610BT » (site support Brother).</li>
+        <li>Clique sur <b>Imprimer</b>, choisis l'imprimante <b>Brother PT-D610BT</b>.</li>
+        <li>Dans « Plus de paramètres » : marges <b>Aucune</b>, échelle <b>100 %</b>, sans en-têtes ni pieds de page.</li>
+        <li>Si le format n'est pas repris automatiquement, ouvre les préférences du pilote et choisis la largeur 18 mm, orientation paysage.</li>
+      </ol>
+      <p>Avec le cadre de calibrage, le trait doit tomber juste au bord du ruban. Mesure la longueur imprimée et dis-moi l'écart.</p>
+    </section>
+  </main>
+
+  <div id="label" class="label print-only"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
